@@ -11,8 +11,8 @@ circuit-breaker:
 spring:
   application:
     name: api-gateway
-  #zipkin:
-  #  base-url: http://localhost:9411
+  zipkin:
+    base-url: ${ZIPKIN_URL}
   cloud:
     loadbalancer:
       ribbon:
