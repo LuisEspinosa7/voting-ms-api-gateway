@@ -18,6 +18,8 @@ spring:
       ribbon:
         enabled: false
     consul:
+      host: ${CONSUL_HOST}
+      port: ${CONSUL_PORT}
       discovery:
         register: false
         registerHealthCheck: false

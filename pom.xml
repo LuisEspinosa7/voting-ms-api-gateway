@@ -82,6 +82,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>voting-api-gateway</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
