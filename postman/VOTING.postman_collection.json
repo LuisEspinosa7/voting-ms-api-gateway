@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "f68fffaa-5c56-4180-acb7-8a2072c3eb64",
+		"name": "VOTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CANDIDATES",
+			"item": [
+				{
+					"name": "Get All Candidates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/{{infoMicroService}}/api/v1/candidates",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{infoMicroService}}",
+								"api",
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\": \"example 1\",\r\n    \"description\": \"Candidate example 1 Something\",\r\n    \"image\": \"https://cdn-icons-png.flaticon.com/512/616/999912121.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/{{infoMicroService}}/api/v1/candidates",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{infoMicroService}}",
+								"api",
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Candidate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"alias\": \"EXAMPLE 1\",\r\n    \"description\": \"CANDIDATE EXAMPLE 1 SOMETHING\",\r\n    \"image\": \"https://cdn-icons-png.flaticon.com/512/616/111111.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/{{infoMicroService}}/api/v1/candidates",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{infoMicroService}}",
+								"api",
+								"v1",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/{{infoMicroService}}/api/v1/candidates/20",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{infoMicroService}}",
+								"api",
+								"v1",
+								"candidates",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VOTES",
+			"item": [
+				{
+					"name": "Add New Vote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": \"8888888888\",\r\n    \"code\": \"f7afea2144e37f46930ee711d2d76f83510698ce9e20302a28ac5661f7b4\",\r\n    \"candidateId\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverUrl}}/{{votesMicroService}}/api/v1/votes",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{votesMicroService}}",
+								"api",
+								"v1",
+								"votes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RESULTS",
+			"item": [
+				{
+					"name": "Get Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverUrl}}/{{resultsMicroService}}/api/v1/results",
+							"host": [
+								"{{serverUrl}}"
+							],
+							"path": [
+								"{{resultsMicroService}}",
+								"api",
+								"v1",
+								"results"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

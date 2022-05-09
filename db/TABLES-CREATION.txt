@@ -1,0 +1,43 @@
+--### VOTING APP WEB APP ####
+
+-- Connect as votingadmin
+
+-- TABLES CREATION
+CREATE TABLE IF NOT EXISTS app.candidates (
+	can_id serial PRIMARY KEY,
+    can_alias VARCHAR (60) UNIQUE NOT NULL,
+	can_description VARCHAR (400) NOT NULL,
+    can_status INT NOT NULL,
+    can_image VARCHAR (800) UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS app.votes (
+	vot_id serial PRIMARY KEY,
+	can_id int NOT NULL,
+    vot_code VARCHAR (60) UNIQUE NOT NULL,
+    vot_timestamp TIMESTAMP,
+    voter_document VARCHAR (20) NOT NULL,
+    FOREIGN KEY (can_id)
+      REFERENCES app.candidates (can_id)
+);
+
+
+-- INIT DATA
+
+INSERT INTO app.candidates(can_alias, can_description, can_status, can_image) 
+    VALUES('Cat', 'Candidate number 1', 1, 'https://cdn-icons.flaticon.com/png/512/3704/premium/3704890.png?token=exp=1651897988~hmac=451f9bc11cf6257d31dee1bf844905f4');
+
+INSERT INTO app.candidates(can_alias, can_description, can_status, can_image) 
+    VALUES('Dog', 'Candidate number 2', 1, 'https://cdn-icons.flaticon.com/png/512/2926/premium/2926722.png?token=exp=1651898065~hmac=aa3802e03df5d5a372c28d6b2b529886');
+
+INSERT INTO app.candidates(can_alias, can_description, can_status, can_image) 
+    VALUES('Parrot', 'Candidate number 3', 1, 'https://cdn-icons-png.flaticon.com/512/427/427487.png');
+
+
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(1, 'ja8db10an74ba1b1aj', NOW(), '99999999');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(2, '8NN10ja1j0AJ9jak98', NOW(), '88888888');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(3, '0AJ9j10aba10AJ9jaj', NOW(), '66666666');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(2, 'ja0an74ba0an741aja', NOW(), '55555555');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(2, 'ge89sha910ab10a1bj', NOW(), '44444444');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(1, 'as18d0AJ1a7dika9aj', NOW(), '33333333');
+INSERT INTO app.votes(can_id, vot_code, vot_timestamp, voter_document) VALUES(1, 'a8d0AJ435661ika9aj', NOW(), '222222222');
